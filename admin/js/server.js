@@ -32,7 +32,7 @@ $( document ).ready( function() {
                   case 'email':
                   case 'mail':
                   case 'lucas':
-                  window.open ('mailto:lucas@tedx2014.com'); 
+                  window.open ('http://mail.tedx2014.com'); 
                   break;
 
                   case 'ted':
@@ -126,6 +126,6 @@ $( document ).ready( function() {
       }
 
       $.register_command( 'help', function() {
-        return 'You need to know the command to continue.<br><comm>volunteer *********</comm> - To verify a volunteer certificate. (This number could be found on your certificate)<br><comm>find ********</comm> - Find someone in our core team.<br>more commands to discover.<pre>'
+        return 'You need to know the command to continue.<br><comm>volunteer *********</comm> - To verify a volunteer certificate. (This number could be found on your certificate)<br><comm>find ********</comm> - Find someone in our core team.<br>Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>snow</comm>)<pre>'
 
       });
