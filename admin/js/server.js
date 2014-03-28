@@ -17,7 +17,6 @@ $( document ).ready( function() {
          },
          
         'go': function( tokens ) {
-           tokens.length
            var places = tokens[1];
            var gotip = "<pre>GO syntax: go somewhere<pre>";
            if(tokens.length == 1 || places == ''){
@@ -48,7 +47,6 @@ $( document ).ready( function() {
         },
 
         'volunteer': function( tokens ) {
-           tokens.length
            var places = tokens[1];
            var gotip = "<pre>Use this command to verify a volunteer certificate. <br>Example: <comm>volunteer 14082459</comm><pre>";
            if(tokens.length == 1 || places == ''){
@@ -70,9 +68,9 @@ $( document ).ready( function() {
         },
 
         'find': function( tokens ) {
-           tokens.length
            var places = tokens[1];
-           var gotip = "Use FIND to contact a core member of TEDxSonghuaRiver.<br>Example: <comm>find Lucas</comm>";
+           var gotip = "Use FIND to contact a core member of TEDxSonghuaRiver.<br>Example: <comm>find Lucas</comm><br>";
+           gotip 	+= "Some available people: <comm>Lucas</comm>, <comm>Ian</comm>, <comm>Ran</comm>, <comm>Yuki</comm>, etc."
            if(tokens.length == 1 || places == ''){
                return gotip;
            }else{
@@ -81,19 +79,39 @@ $( document ).ready( function() {
                   case 'wangzitian':
                   case 'zitian':
                   case 'lucaswang':
-                  return 'Lucas Wang-Zitian | Chair 2013-2014<br><a href="Lucas@TEDx2014.com">Lucas@TEDx2014.com</a> | WeChat: jobmine | Skype: jobmine';
+                  case 'chair':
+                  var returnword = 'Lucas Wang-Zitian 王子天 | Chair 2013-2014<br>';
+                  returnword 	+= 'Toronto, Ontario, Canada | University of Waterloo | Software Engineering<br>';
+                  returnword 	+= '<a href="Lucas@TEDx2014.com">Lucas@TEDx2014.com</a> | WeChat: jobmine | Skype: jobmine';
+                  return returnword;
                   break;
                   
                   case 'ian':
                   case 'osburn':
                   case 'zatkin':
-                  return 'Ian Zatkin-Osburn | VP External Affairs 2014<br><a href="Ian@TEDx2014.com">Ian@TEDx2014.com</a> | WeChat: Jewsus1999 | Skype: jewsus1999';
+                  case 'vpe':
+                  var returnword = 'Ian Zatkin-Osburn | VP External Affairs 2014<br>';
+                  returnword 	+= 'Aliso Viejo, California, USA | Soka University of America<br>';
+                  returnword 	+= '<a href="Ian@TEDx2014.com">Ian@TEDx2014.com</a> | WeChat: Jewsus1999 | Skype: jewsus1999';
+                  return returnword;
+                  break;
+
+                  case 'ran':
+                  case 'chengran':
+                  case 'rancheng':
+                  case 'vpi':
+                  var returnword = 'Ran Cheng 程然 | VP Internal Affairs 2014<br>';
+                  returnword 	+= 'Kingston, Ontario, Canada | Queen\'s University<br>';
+                  returnword 	+= '<a href="Ran@TEDx2014.com">Ran@TEDx2014.com</a> | WeChat: Chengran24 | Skype: crania_24';
+                  return returnword;
                   break;
 
                   case 'yuki':
                   case 'wanlin':
                   case 'yukili':
-                  return 'Yuki Li-Wanlin | Vice-Chair 2013';
+                  var returnword = 'Yuki Li-Wanlin 李莞琳 | Vice-Chair 2013<br>';
+                  returnword 	+= 'Seattle, Washington, USA | University of Washington';
+                  return returnword;
                   break;
 
                   default:
@@ -101,6 +119,139 @@ $( document ).ready( function() {
               }
            }
         },
+
+
+
+        'interview': function( tokens ) {
+           var places = tokens[1];
+           var gotip = "You can find interview additional materials here.</br> The code will be provided to you by us after a confirmation of attending an interview.<br>";
+           gotip 	+= "Example: <comm>interview 3601</comm><br>";
+           gotip	+= "The passage will be in color of <pass>yellow</pass>."
+           if(tokens.length == 1 || places == ''){
+               return gotip;
+           }else{
+              switch (places){
+                  case '3601':
+                  var returnword = 'This is a sample interview passage. When you receive a code, you can pull your material by typing <comm>interview ****</comm>.<br>';
+                  returnword 	+= '<br>';
+                  returnword 	+= '<pass>The research by the University of Western Australia, using meteorological and ocean current data alongside the analysis from data “pings” recorded by the British company Inmarsat, has determined the point of impact and the movements of debris in the weeks following the crash. <br><br>The search zone has shifted 1,100 kilometres (680 miles) to the northeast of where planes and ships had been looking for possible debris because of a “new credible lead,” Australia said Friday.<pass>';
+                  return returnword;
+                  break;
+                  
+                  case '3511':
+                  var returnword = '(You will need to read this part in English)<br>';
+                  returnword 	+= '<br>';
+                  returnword 	+= '<pass>The crashed Malaysia Airlines flight gave one last unexplained signal eight minutes after its final “ping,” possibly the result of the plane entering its “catastrophic phase” as it plunged into the Indian Ocean, investigators said Tuesday night.</pass><br><br>';
+                  returnword 	+= '<pass>As families of its 239 passengers demanded “proof” of the plane’s demise, Malaysian authorities presented analysis by Britain’s Inmarsat, the telecommunications company, of satellite data to explain its conclusion that the plane crashed into remote waters 18 days ago and left no survivors.</pass><br>';
+                  return returnword;
+                  break;
+
+                  case '3512':
+                  var returnword = '(You need to translate this passage into English and read it in both Chinese and English.)<br>';
+                  returnword 	+= '<br>';
+                  returnword 	+= '<pass>伊斯兰教是全世界穆斯林共同的信仰，可是它在全世界有很多不同的种类。就拿中国来说，中国有两千一百万的穆斯林，五十六个民族中有十个民族信仰伊斯兰教和几十个伊斯兰教的派别。这个文章会介绍穆斯林在中国的相同部分和他们的差异。首先我会介绍穆斯林的民族，接着我会介绍大部分的穆斯林之间有什么相同的方面，最后我会介绍穆斯林民族两大系统分别有什么差异。</pass><br><br>';
+                  return returnword;
+                  break;
+
+                  default:
+                  return "The interview material code is not found.<br>" + gotip;
+              }
+           }
+        },
+
+
+
+        'job': function( tokens ) {
+           var places = tokens[1];
+           var gotip = "Thanks for your interest in working with us! We currently have 3 openings. <br>Use the following command to know more.<br>";
+           gotip += "<comm>job 36</comm> - VP Internal Affairs <i>(closed)</i><br>";
+           gotip += "<comm>job 35</comm> - Interpreter <i>(closed)</i><br>";
+           gotip += "<comm>job 38</comm> - Interpreter Manager<br>";
+           gotip += "<comm>job 37</comm> - Social Networking Manager<br>";
+           gotip += "<comm>job 21</comm> - VP Admin<br>";
+
+           var closedword = "This job application has been closed. <br>If you have had an interview already, please check your email or use command <comm>find lucas</comm> to ask.";
+
+           if(tokens.length == 1 || places == ''){
+               return gotip;
+           }else{
+              switch (places){
+                  case '36':
+                  var returnword = "JOB DESCRIPTION - 36<br>";
+                  returnword 	+= closedword;
+                  return returnword;
+                  break;
+                  
+                  case '35':
+				  var returnword = "JOB DESCRIPTION - 35<br>";
+                  returnword 	+= closedword;
+                  return returnword;                  
+                  break;
+
+                  case '38':
+                  var returnword = "JOB DESCRIPTION - 38<br>";
+                  returnword 	+= "Interpreter Manager - Manage the interpreter team<br>";
+                  returnword 	+= "<li>Organize and plan the live event translating process.</li>";
+                  returnword 	+= "<li>Interview and co-work with our interpreters.</li>";
+                  returnword 	+= "<li>Manage part of the team coordinating with our speakers.</li>";
+                  returnword 	+= "Requirements:<br>";
+                  returnword 	+= "<li>Hold or in the process earning a degree in English/Interpreter/Social Science or relative fields is a plus. </li>";
+                  returnword 	+= "<li>Working experience as an interpreter is a plus but not required.</li>";
+                  returnword 	+= "<li>Fluency in both Mandarin Chinese and English.</li>";
+                  returnword 	+= "<li>Leadership experience and good communication and managing skill.</li>";
+                  returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
+                  returnword 	+= "<li>July August, full time. Start working in May part-time.</li>";
+                  returnword 	+= "Apply Here -> <a href='https://www.surveymonkey.com/s/3X593MV' target='_blank'>Application</a><br>";
+                  returnword 	+= "Deadline: TUE April 1 2014 23:59 Beijing Time";
+                  return returnword;  
+                  break;
+
+                  case '37':
+                  var returnword = "JOB DESCRIPTION - 37<br>";
+                  returnword 	+= "Social Networking Manager - Let our ideas spread on the Internet!<br>";
+                  returnword 	+= "IMPORTANT: This job is mainly on MANAGING, not playing with the website.";
+                  returnword 	+= "<li>Post and maintain our social networking platforms include 人人, Weibo, WeChat etc.</li>";
+                  returnword 	+= "<li>Manage the team and organize our social networking workers.</li>";
+                  returnword 	+= "<li>Build connections with media/famous people.</li>";
+                  returnword 	+= "<li>Follow up the comments and messages from our followers.</li>";
+                  returnword 	+= "Requirements:<br>";
+                  returnword 	+= "<li>Fluency in Mandarin Chinese.</li>";
+                  returnword 	+= "<li>Fluency in English is a plus.</li>";
+                  returnword 	+= "<li>Leadership experience and good communication and managing skill.</li>";
+                  returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
+                  returnword 	+= "<li>April May June July August, full time (can work promptly).</li>";
+                  returnword 	+= "Apply Here -> <a href='http://tedxsonghuariver.com' target='_blank'>Application</a><br>";
+                  return returnword;  
+                  break;
+
+
+                  case '21':
+                  var returnword = "JOB DESCRIPTION - 21<br>";
+                  returnword 	+= "VP Admin - Administrate and guard our world.<br>";
+                  returnword 	+= "IMPORTANT: This is one of the four core team members. This position is heavy duty.<br>";
+                  returnword 	+= "<li>Train and take care of the technical workers.</li>";
+                  returnword 	+= "<li>Meeting organizing, scheduling.</li>";
+                  returnword 	+= "<li>Financial budgets and approval.</li>";
+                  returnword 	+= "<li>Plan the orientation of new workers.</li>";
+                  returnword 	+= "<li>Volunteer certificates.</li>";
+                  returnword 	+= "<li>Maintain our website, emails and technical problems.</li>";
+                  returnword 	+= "Requirements:<br>";
+                  returnword 	+= "<li>Hold or in the process earning a degree in Computer Science, Software Engineering or relative fields.</li>";
+                  returnword 	+= "<li>Good communication skill.</li>";
+                  returnword 	+= "<li>Leadership experience and managing skill.</li>";
+                  returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
+                  returnword 	+= "<li>July August, full time. Start working in May part-time.</li>";
+                  returnword 	+= "Apply Here -> <a hhref='http://tedxsonghuariver.com' target='_blank'>Application</a><br>";
+                  return returnword;  
+                  break;
+
+                  default:
+                  return "No such a job is found. Please use <comm>job</comm> to see all available jobs.";
+              }
+           }
+        },
+
+
          
          
          'date': function( tokens ) {
@@ -125,7 +276,12 @@ $( document ).ready( function() {
         $.register_command( j, command_directory[j] );
       }
 
-      $.register_command( 'help', function() {
-        return 'You need to know the command to continue.<br><comm>volunteer *********</comm> - To verify a volunteer certificate. (This number could be found on your certificate)<br><comm>find ********</comm> - Find someone in our core team.<br>Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>snow</comm>)<pre>'
-
-      });
+      	$.register_command( 'help', function() {
+	      	var helpword = "You need to know the command to continue.<br>";
+	      	helpword 	+= "<comm>job</comm> - Check our opened job opportunities.<br>";
+	      	helpword 	+= "<comm>volunteer</comm> - To verify a volunteer certificate. (This number could be found on your certificate)<br>";
+	      	helpword 	+= "<comm>find</comm> - Find someone in our core team.<br>";
+	      	helpword 	+= "<comm>interview</comm> - Check required interview documents.<br>";
+	      	helpword 	+= "Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>snow</comm>)";
+	        return helpword;
+      	});
