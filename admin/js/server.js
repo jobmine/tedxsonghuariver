@@ -282,7 +282,7 @@ $( document ).ready( function() {
 	      	helpword 	+= "<comm>volunteer</comm> - To verify a volunteer certificate. (This number could be found on your certificate)<br>";
 	      	helpword 	+= "<comm>find</comm> - Find someone in our core team.<br>";
 	      	helpword 	+= "<comm>interview</comm> - Check required interview documents.<br>";
-	      	helpword 	+= "Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>snow</comm>)";
+	      	helpword 	+= "Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>2048</comm>, <comm>snow</comm>)";
 	        return helpword;
       	});
 
