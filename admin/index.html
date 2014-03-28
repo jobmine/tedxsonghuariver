@@ -13,16 +13,22 @@
         <script src='js/simple.js'></script>
         <script src='js/snow.js'></script>
         <link rel="stylesheet" href="css/wterm.css" type="text/css" />
+        <title>TEDxSonghuaRiver Admin Console</title>
 
+        <script>snowStorm.toggleSnow();</script>
         <script>
-            snowStorm.toggleSnow();
-            var tx = new Array ("TEDxSonghuaRiver","Admin Console")
-            var txcount=2;var i=1;var wo=0;var ud=1;
-            function animatetitle(){
+            var tx = new Array ("TEDxSonghuaRiver", "Admin Console");
+            var txcount=2; var i=1; var wo=0; var ud=1;
+            function animatetitle() {
                 window.document.title=tx[wo].substr(0, i)+"_";
-                if (ud==0) i--;if (ud==1) i++;
-                if (i==-1) { ud=1;i=0;wo++;wo=wo%txcount; }
-                if (i==tx[wo].length+20) { ud=0;i=tx[wo].length; }
+                if (ud==0) i--;
+                else if (ud==1) i++;
+                if (i==-1) { 
+                    ud=1; i=0; wo++; wo=wo%txcount; 
+                }
+                else if (i==tx[wo].length+20) { 
+                    ud=0; i=tx[wo].length; 
+                }
                 parent.window.document.title = tx[wo].substr(0, i)+"_";
                 setTimeout("animatetitle()",50);
             }
