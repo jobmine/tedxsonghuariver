@@ -285,3 +285,10 @@ $( document ).ready( function() {
 	      	helpword 	+= "Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>snow</comm>)";
 	        return helpword;
       	});
+
+      	$.register_command( '2048', function() {
+	      	var helpword = "Oh You know this game?<br>";
+	      	helpword += " <div class=\"container\"><div class=\"above-game\"><a class=\"restart-button\">Restart</a></div><div class=\"game-container\"><div class=\"game-message\"><p></p><div class=\"lower\"><a class=\"keep-playing-button\">Keep going</a><a class=\"retry-button\">Try again</a></div></div><div class=\"grid-container\"><div class=\"grid-row\"><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div></div><div class=\"grid-row\"><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div></div><div class=\"grid-row\"><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div></div><div class=\"grid-row\"><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div><div class=\"grid-cell\"></div></div></div><div class=\"tile-container\"></div></div></div><script src=\"2048/bind_polyfill.js\"></script><script src=\"2048/classlist_polyfill.js\"></script><script src=\"2048/animframe_polyfill.js\"></script><script src=\"2048/keyboard_input_manager.js\"></script><script src=\"2048/html_actuator.js\"></script><script src=\"2048/grid.js\"></script><script src=\"2048/tile.js\"></script><script src=\"2048/local_storage_manager.js\"></script><script src=\"2048/game_manager.js\"></script><script src=\"2048/application.js\"></script>";
+
+	        return helpword;
+      	});

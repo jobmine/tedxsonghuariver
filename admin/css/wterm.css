@@ -8,6 +8,7 @@ body { margin: 0; padding: 0; color: #fff; font-family:"Courier New",Courier,mon
 
 .wterm_theme_green_on_black { background: #111; color: #fff; }
 .wterm_theme_green_on_black div { margin-bottom: 1em; }
+.wterm_theme_green_on_black div .container {margin-bottom: 0 !important;}
 .wterm_theme_green_on_black li {margin-left: 20px;}
 .wterm_theme_green_on_black comm { color:rgb(24, 160, 255); }
 .wterm_theme_green_on_black pass { color: #FFDE0E; }
