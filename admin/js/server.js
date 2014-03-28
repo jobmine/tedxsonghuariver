@@ -3,6 +3,7 @@ $( document ).ready( function() {
       });
 
 	var isRunning2048 = 0;
+	var isPlayingMusic = 0;
        var command_directory = {
 
          '404': function( tokens ) {
@@ -83,7 +84,7 @@ $( document ).ready( function() {
                   case 'chair':
                   var returnword = 'Lucas Wang-Zitian 王子天 | Chair 2013-2014<br>';
                   returnword 	+= 'Toronto, Ontario, Canada | University of Waterloo | Software Engineering<br>';
-                  returnword 	+= '<a href="Lucas@TEDx2014.com">Lucas@TEDx2014.com</a> | WeChat: jobmine | Skype: jobmine';
+                  returnword 	+= '<a href="mailto:Lucas@TEDx2014.com">Lucas@TEDx2014.com</a> | WeChat: jobmine | Skype: jobmine';
                   return returnword;
                   break;
                   
@@ -93,7 +94,7 @@ $( document ).ready( function() {
                   case 'vpe':
                   var returnword = 'Ian Zatkin-Osburn | VP External Affairs 2014<br>';
                   returnword 	+= 'Aliso Viejo, California, USA | Soka University of America<br>';
-                  returnword 	+= '<a href="Ian@TEDx2014.com">Ian@TEDx2014.com</a> | WeChat: Jewsus1999 | Skype: jewsus1999';
+                  returnword 	+= '<a href="mailto:Ian@TEDx2014.com">Ian@TEDx2014.com</a> | WeChat: Jewsus1999 | Skype: jewsus1999';
                   return returnword;
                   break;
 
@@ -103,7 +104,7 @@ $( document ).ready( function() {
                   case 'vpi':
                   var returnword = 'Ran Cheng 程然 | VP Internal Affairs 2014<br>';
                   returnword 	+= 'Kingston, Ontario, Canada | Queen\'s University<br>';
-                  returnword 	+= '<a href="Ran@TEDx2014.com">Ran@TEDx2014.com</a> | WeChat: Chengran24 | Skype: crania_24';
+                  returnword 	+= '<a href="mailto:Ran@TEDx2014.com">Ran@TEDx2014.com</a> | WeChat: Chengran24 | Skype: crania_24';
                   return returnword;
                   break;
 
@@ -262,6 +263,7 @@ $( document ).ready( function() {
          'clean': function( tokens ) {
 			$('.undefined').html('');
 			isRunning2048 = 0;
+			isPlayingMusic = 0;
 		},
          'r': function( tokens ) {
 			window.location.reload(); 
@@ -284,7 +286,7 @@ $( document ).ready( function() {
 	      	helpword 	+= "<comm>volunteer</comm> - To verify a volunteer certificate. (This number could be found on your certificate)<br>";
 	      	helpword 	+= "<comm>find</comm> - Find someone in our core team.<br>";
 	      	helpword 	+= "<comm>interview</comm> - Check required interview documents.<br>";
-	      	helpword 	+= "Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>2048</comm>, <comm>snow</comm>)";
+	      	helpword 	+= "Thousands of more commands to discover. (tips: try something like <comm>email</comm>, <comm>2048</comm>, <comm>snow</comm>, <comm>music</comm>)";
 	        return helpword;
       	});
 
@@ -299,4 +301,18 @@ $( document ).ready( function() {
 		    	$('.undefined').html('');
 		    }
 	        return helpword;
+      	});
+
+
+	
+		$.register_command( 'music', function() {
+      		var helpword = "<audio controls autoplay><source src=\"http://a.tumblr.com/tumblr_m6p2z16KBw1qitbxio1.mp3\" type=\"audio/mpeg\">Your browser does not support the audio element.</audio>";
+      		if (isPlayingMusic === 0) {
+		      	isPlayingMusic = 1;
+		      	return helpword;
+		    }
+		    else if (isPlayingMusic === 1) {
+		    	$('.undefined').html('');
+		    	isPlayingMusic = 0;
+		    }
       	});

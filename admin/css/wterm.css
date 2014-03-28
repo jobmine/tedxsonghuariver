@@ -14,5 +14,5 @@ body { margin: 0; padding: 0; color: #fff; font-family:"Courier New",Courier,mon
 .wterm_theme_green_on_black pass { color: #FFDE0E; }
 .wterm_theme_green_on_black input { background: transparent; border: 0; color: red; }
 
-a { color: green; text-decoration: underline; }
+a { color: rgb(76, 212, 3); text-decoration: underline; font-weight:bold;}
 a:hover { opacity: .6; }
