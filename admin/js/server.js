@@ -155,6 +155,20 @@ $( document ).ready( function() {
                   return returnword;
                   break;
 
+                  case '3811':
+                  var returnword = '(You will need to read this part in English)<br>';
+                  returnword 	+= '<br>';
+                  returnword 	+= '<pass>The Next Chapter Theater at TED2014 smells incredible. That’s because it was constructed of Douglas Fir, harvested locally in the Pacific Northwest, and assembled on-site in Vancouver, Canada, over the past four and a half days. See, the Vancouver Convention Centre is perfect for TED—it’s beautifully designed, environmentally friendly, and has sweeping views of Vancouver bay and North Shore Mountains. However, it didn’t have a theater. That meant that TED got to build our own, designing the ultimate space for giving and watching talks.</pass><br><br>';
+                  return returnword;
+                  break;
+
+                  case '3812':
+                  var returnword = '(You need to translate this passage into English and read it in both Chinese and English.)<br>';
+                  returnword 	+= '<br>';
+                  returnword 	+= '<pass>tba</pass><br><br>';
+                  return returnword;
+                  break;
+
                   default:
                   return "The interview material code is not found.<br>" + gotip;
               }
@@ -168,7 +182,7 @@ $( document ).ready( function() {
            var gotip = "Thanks for your interest in working with us! We currently have 3 openings. <br>Use the following command to know more.<br>";
            gotip += "<comm>job 36</comm> - VP Internal Affairs <i>(closed)</i><br>";
            gotip += "<comm>job 35</comm> - Interpreter <i>(closed)</i><br>";
-           gotip += "<comm>job 38</comm> - Interpreter Manager<br>";
+           gotip += "<comm>job 38</comm> - Interpreter Manager <i>(closed)</i><br>";
            gotip += "<comm>job 37</comm> - Social Networking Manager<br>";
            gotip += "<comm>job 21</comm> - VP Admin<br>";
 
@@ -203,7 +217,7 @@ $( document ).ready( function() {
                   returnword 	+= "<li>Leadership experience and good communication and managing skill.</li>";
                   returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
                   returnword 	+= "<li>July August, full time. Start working in May part-time.</li>";
-                  returnword 	+= "Apply Here -> <a href='https://www.surveymonkey.com/s/3X593MV' target='_blank'>Application</a><br>";
+                  returnword 	+= "Apply Here -> <a href='https://www.surveymonkey.com/s/3X593MV' target='_blank'>Application (Closed)</a>. Although this application is still available, it's not monitored anymore. Please email us for any inquires.<br>";
                   returnword 	+= "Deadline: TUE April 1 2014 23:59 Beijing Time";
                   return returnword;  
                   break;
@@ -243,7 +257,7 @@ $( document ).ready( function() {
                   returnword 	+= "<li>Leadership experience and managing skill.</li>";
                   returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
                   returnword 	+= "<li>July August, full time. Start working in May part-time.</li>";
-                  returnword 	+= "Apply Here -> <a hhref='http://tedxsonghuariver.com' target='_blank'>Application</a><br>";
+                  returnword 	+= "Apply Here -> <a href='http://tedxsonghuariver.com' target='_blank'>Application</a><br>";
                   return returnword;  
                   break;
 
