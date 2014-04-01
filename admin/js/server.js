@@ -183,7 +183,7 @@ $( document ).ready( function() {
            gotip += "<comm>job 36</comm> - VP Internal Affairs <i>(closed)</i><br>";
            gotip += "<comm>job 35</comm> - Interpreter <i>(closed)</i><br>";
            gotip += "<comm>job 38</comm> - Interpreter Manager <i>(closed)</i><br>";
-           gotip += "<comm>job 37</comm> - Social Networking Manager<br>";
+           gotip += "<comm>job 43</comm> - Social Networking Manager<br>";
            gotip += "<comm>job 21</comm> - VP Admin<br>";
 
            var closedword = "This job application has been closed. <br>If you have had an interview already, please check your email or use command <comm>find lucas</comm> to ask.";
@@ -218,12 +218,13 @@ $( document ).ready( function() {
                   returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
                   returnword 	+= "<li>July August, full time. Start working in May part-time.</li>";
                   returnword 	+= "Apply Here -> <a href='https://www.surveymonkey.com/s/3X593MV' target='_blank'>Application (Closed)</a>. Although this application is still available, it's not monitored anymore. Please email us for any inquires.<br>";
-                  returnword 	+= "Deadline: TUE April 1 2014 23:59 Beijing Time";
+                  returnword 	+= "Deadline: TUE April 1 2014 23:59 Beijing Time<br>";
+                  returnword 	+= closedword;
                   return returnword;  
                   break;
 
-                  case '37':
-                  var returnword = "JOB DESCRIPTION - 37<br>";
+                  case '43':
+                  var returnword = "JOB DESCRIPTION - 43<br>";
                   returnword 	+= "Social Networking Manager - Let our ideas spread on the Internet!<br>";
                   returnword 	+= "IMPORTANT: This job is mainly on MANAGING, not playing with the website.";
                   returnword 	+= "<li>Post and maintain our social networking platforms include 人人, Weibo, WeChat etc.</li>";
@@ -236,7 +237,8 @@ $( document ).ready( function() {
                   returnword 	+= "<li>Leadership experience and good communication and managing skill.</li>";
                   returnword 	+= "<li>Cooperate well with other co-workers and volunteers.</li>";
                   returnword 	+= "<li>April May June July August, full time (can work promptly).</li>";
-                  returnword 	+= "Apply Here -> <a href='http://tedxsonghuariver.com' target='_blank'>Application</a><br>";
+                  returnword 	+= "Apply Here -> <a href='https://www.surveymonkey.com/s/Z9LYJSZ' target='_blank'>Application</a><br>";
+                  returnword 	+= "Deadline: As soon as we get enough co-workers.";
                   return returnword;  
                   break;
 
