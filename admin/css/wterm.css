@@ -1,0 +1,18 @@
+html { background-color: #111;}
+body { margin: 0; padding: 0; color: #fff; font-family:"Courier New",Courier,monospace;  width: 99%; height: 100%; display: block; overflow-x: none; overflow-y: auto;}
+.wterm_terminal { padding-left:12px;  font-size: 15px; }
+
+.wterm_terminal input { padding-left:5px; background: transparent; border: 0; color: #fff; width: 100%; font-size: 1em; font-family:"Courier New",Courier,monospace; outline: none;   }
+.wterm_terminal .wterm_prompt { line-height:1.6em;float: left; clear: left;  }
+.wterm_terminal  form { float: left; margin: 0px; width: 75%; }
+
+.wterm_theme_green_on_black { background: #111; color: #fff; }
+.wterm_theme_green_on_black div { margin-bottom: 1em; }
+.wterm_theme_green_on_black div .container {margin-bottom: 0 !important;}
+.wterm_theme_green_on_black li {margin-left: 20px;}
+.wterm_theme_green_on_black comm { color:rgb(24, 160, 255); }
+.wterm_theme_green_on_black pass { color: #FFDE0E; }
+.wterm_theme_green_on_black input { background: transparent; border: 0; color: red; }
+
+a { color: rgb(76, 212, 3); text-decoration: underline; font-weight:bold;}
+a:hover { opacity: .6; }

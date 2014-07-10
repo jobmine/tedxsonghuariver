@@ -14,6 +14,6 @@
 	$savestring = "Name:    " . $name . "\nDOB:     " . $bday . "\nOccu:    " . $location . "\nEnglish: " . $eng . "\nPhone:   " . $phone . "\nEmail:   " . $email . "\nResume: " . $resume . "\nDid you attend: " . $comment1 . "\nThree words descripe yourself: " . $comment2 . "\nWhy Attend: " . $comment3 . "\nVolunteer What: " . $dowhat . "\n\n------------------------------\n\n";
 	fwrite($fp, $savestring);
 	fclose($fp);
-	header("Location: http://www.tedxsonghuariver.com");
+	header("Location: http://www.tedxsonghuariver.com/submit.html");
 	die();
 ?>

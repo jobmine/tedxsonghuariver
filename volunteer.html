@@ -14,6 +14,7 @@
     <link href="assets/css/menu.css" rel="stylesheet">
 	<link href="assets/css/font-awesome.css" rel="stylesheet">
 	<link href="assets/css/linecons.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -91,13 +92,13 @@
                     <fieldset>
 
                         <label for="name">您的名字 Your Name</label>
-                        <input type="text" name="name" placeholder="如：李莞琳 Yuki">
+                        <input type="text" name="name" placeholder="如：李莞琳 Yuki" required>
 
                         <label for="bday">您的生日 Your Date of Birth</label>
-						<input type="date" name="bday" placeholder="如：1986-05-15">
+						<input type="date" name="bday" placeholder="如：1986-05-15" required>
                         
                         <label for="location">您所在的公司/学校/职位 Your Occupation</label>
-                        <input name="location"  type="text" placeholder="如：Amazon (Seattle), UX Designer">
+                        <input name="location"  type="text" placeholder="如：Amazon (Seattle), UX Designer" required>
 
                         <label for="eng">您的英文能力 Your English Level</label>
                         <select name="eng">
@@ -111,26 +112,26 @@
 						</select>
 
                         <label for="phone">您的电话号码 Your Number</label>
-                        <input type="text" name="phone" placeholder="如：139 1234 5678 / (646) 555 5555">
+                        <input type="text" name="phone" placeholder="如：139 1234 5678 / (646) 555 5555" required>
 
                         <label for="email">您的电子邮箱 Your Email</label>
-                        <input type="email" name="email" placeholder="如：sample@TEDx2014.com">
+                        <input type="email" name="email" placeholder="如：sample@TEDx2014.com" required>
 
                         <label for="resume">请告诉我们您引以为豪的个人经历（如志愿者经历，工作经历）<br>Impress us with your experiences</label>
-                        <textarea name="resume"></textarea>
+                        <textarea name="resume" required></textarea>
 
                         <label for="dowhat">您希望在哪方便志愿？（现场、市场、公关或任何您感兴趣的）<br>What Do You Want to Volunteer? </label>
-                        <textarea name="dowhat"></textarea>
+                        <textarea name="dowhat" required></textarea>
                         
 
                         <label for="comment1">您是否参加过往期 TEDxSonghuaRiver？以何身份？<br>Did you participate in past TEDxSonghuaRiver?</label>
-                        <textarea name="comment1"></textarea>
+                        <textarea name="comment1" required></textarea>
 
                         <label for="comment2">请用三个字或词形容您自己 并解释<br>Describe Yourself in Three Words and Explain</label>
-                        <textarea name="comment2"></textarea>
+                        <textarea name="comment2" required></textarea>
 
                         <label for="comment3">您为什么希望以志愿者参与本期 TEDxSonghuaRiver？<br>Reason You Want to Volunteer TEDxSonghuaRiver?</label>
-                        <textarea name="comment3"></textarea>
+                        <textarea name="comment3" required></textarea>
 
                         <button type="submit" value="submit" class="pure-button">申请 Apply</button>
                     </fieldset>
@@ -141,7 +142,7 @@
 	    	<div class="span4 whitezone">
 		    	<h4>注意事项</h4>
 		    	<p>这是志愿者的申请链接，不是共同策展人。如果您希望申请策展人，请返回主页点击相应链接。</p>
-		    	<p>我们将尽快受理您的申请。您可以发送邮件或登录 http://admin.TEDxSonghuaRiver.com 查询进度。我们通常需要比平时更多的时间筛选您的申请。</p>
+		    	<p>我们将尽快受理您的申请。您可以发送邮件或登录 <a href="http://tedxsonghuariver.com/admin" target="_blank">http://tedxsonghuariver.com/admin</a> 查询进度。我们通常需要比平时更多的时间筛选您的申请。</p>
 		    	<p>志愿者的流程是这样的。在您填写申请表后，我们的人力组会根据您的申请把您的申请表发送给相应部门。这之后，相关负责人会选择是否有相应职位空缺。我们可能在这时与您约电话、视频、或办公室见面面试，或邀请您与我们共进午餐。之后，我们会通知您详细的培训时间以及更多详细信息。大会当天结束后，如果您的工作符合部门要求，我们将会根据您的申请为您颁发志愿者证明信。
 		    	</p>
 		    	<p>
@@ -206,6 +207,20 @@
 					animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' }
 				});
 			});
+		</script>
+		<script>
+		$(function() { 
+	        $(':submit').click(function(e) {
+	            $(':text, textarea').each(function() {
+	                if ($(this).val().length == 0) {
+	                    e.preventDefault();
+	                    $(this).removeClass().addClass('animated shake').one('	webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+					      		$(this).removeClass();
+					    });
+	                }
+	            });
+	        });
+		});
 		</script>
   </body>
 </html>

@@ -14,6 +14,8 @@
     <link href="assets/css/menu.css" rel="stylesheet">
 	<link href="assets/css/font-awesome.css" rel="stylesheet">
 	<link href="assets/css/linecons.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
+
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -83,13 +85,13 @@
                     <fieldset>
 
                         <label for="name">您的名字 Your Name</label>
-                        <input type="text" name="name" placeholder="如：李莞琳 Yuki">
+                        <input type="text" name="name" placeholder="如：李莞琳 Yuki" required>
 
                         <label for="bday">您的生日 Your Date of Birth</label>
-						<input type="date" name="bday" placeholder="如：1986-05-15">
+						<input type="date" name="bday" placeholder="如：1986-05-15" required>
                         
                         <label for="location">您所在的公司/学校/职位 Your Occupation</label>
-                        <input name="location"  type="text" placeholder="如：Amazon (Seattle), UX Designer">
+                        <input name="location"  type="text" placeholder="如：Amazon (Seattle), UX Designer" required>
 
                        	<label for="eng">您的英文能力 Your English Level</label>
                         <select name="eng">
@@ -103,22 +105,22 @@
 						</select>
 
                         <label for="phone">您的电话号码 Your Number</label>
-                        <input type="text" name="phone" placeholder="如：139 1234 5678 / (646) 555 5555">
+                        <input type="text" name="phone" placeholder="如：139 1234 5678 / (646) 555 5555" required>
 
                         <label for="email">您的电子邮箱 Your Email</label>
-                        <input id="email" type="email" name="email" placeholder="如：sample@TEDx2014.com">
+                        <input id="email" type="email" name="email" placeholder="如：sample@TEDx2014.com" required>
 
                         <label for="comment1">您是否参加过往期 TEDxSonghuaRiver？以何身份？<br>Did you participate in past TEDxSonghuaRiver?</label>
-                        <textarea name="comment1"></textarea>
+                        <textarea name="comment1" required></textarea>
 
                         <label for="comment2">请用三个字或词形容您自己 并解释<br>Describe Yourself in Three Words and Explain</label>
-                        <textarea name="comment2"></textarea>
+                        <textarea name="comment2" required></textarea>
 
                         <label for="comment3">写出您最引以为豪的三个爱好（如足球、旅游、烹饪）<br>Tell Us Three of Your Favorite Hobbies (like Soccer, Travel, Cooking)</label>
-                        <textarea name="comment3"></textarea>
+                        <textarea name="comment3" required></textarea>
 
                         <label for="comment4">您为什么希望参加本期 TEDxSonghuaRiver？<br>Reason You Want to Attend TEDxSonghuaRiver?</label>
-                        <textarea name="comment4"></textarea>
+                        <textarea name="comment4" required></textarea>
 
                         <button type="submit" value="submit" class="pure-button">申请 Apply</button>
                     </fieldset>
@@ -191,6 +193,20 @@
 					animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' }
 				});
 			});
+		</script>
+		<script>
+		$(function() { 
+	        $(':submit').click(function(e) {
+	            $(':text, textarea').each(function() {
+	                if ($(this).val().length == 0) {
+	                    e.preventDefault();
+	                    $(this).removeClass().addClass('animated shake').one('	webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+					      		$(this).removeClass();
+					    });
+	                }
+	            });
+	        });
+		});
 		</script>
   </body>
 </html>
